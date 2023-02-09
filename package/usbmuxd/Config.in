@@ -1,0 +1,5 @@
+config BR2_PACKAGE_USBMUXD
+      bool "usbmuxd"
+      help
+        usbmuxd is a server for connecting to iPhone/iPod Touch devices.
+

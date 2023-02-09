@@ -1,0 +1,15 @@
+USBMUXD_VERSION = 2.0.1
+USBMUXD_SITE = https://github.com/libimobiledevice/usbmuxd/releases/download/
+USBMUXD_SOURCE = usbmuxd-$(USBMOXD_VERSION).tar.gz
+USBMUXD_LICENSE = LGPL-2.1
+USBMUXD_LICENSE_FILES = COPYING
+USBMUXD_INSTALL_STAGING = YES
+USBMUXD_DEPENDENCIES = libplist libusbmuxd
+USBMUXD_CONF_OPT = --disable-manpages
+USBMUXD_MAKE_OPT = -j1
+USBMUXD_POST_INSTALL_TARGET_HOOKS += USBMOXD_POST_INSTALL_TARGET_HOOK_FUNCTION
+
+define USBMUXD_POST_INSTALL_TARGET_HOOK_FUNCTION
+   $(INSTALL) -D -m 755 $(@D)/usbmuxd $(TARGET_DIR)/usr/sbin/usbmuxd
+   $(INSTALL) -D -m 644 $(@D)/usbmuxd.conf $(TARGET_DIR)/etc/usbmuxd.conf
+endef
