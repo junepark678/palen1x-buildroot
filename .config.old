@@ -1163,6 +1163,7 @@ BR2_PACKAGE_SEDUTIL_ARCH_SUPPORTS=y
 #
 # usbmount requires udev to be enabled
 #
+BR2_PACKAGE_USBMUXD=y
 
 #
 # usbutils needs udev /dev management and toolchain w/ threads, gcc >= 4.9
